@@ -12,33 +12,35 @@
 		{
 			"name": "LOOKUP_BY_NAME",
 			"fulfillment": {
-				"conversationName": "LOOKUP_BY_NAME"
+				"conversationName": "addressBook"
 			},
 			"intent": {
-				"name": "actions.intent.TEXT",
-				"queryPatterns": [
-					{ "queryPattern": "Can you tell me what ENTRY_NAME's ENTRY_FIELD is?" },
-					{ "queryPattern": "What is ENTRY_NAME's ENTRY_FIELD?" },
-					{ "queryPattern": "What's ENTRY_NAME's ENTRY_FIELD?" },
-					{ "queryPattern": "Can you find ENTRY_NAME's ENTRY_FIELD" },
-					{ "queryPattern": "Tell me what ENTRY_NAME's ENTRY_FIELD is" },
-					{ "queryPattern": "Tell me ENTRY_NAME's ENTRY_FIELD" },
-					{ "queryPattern": "Lookup what ENTRY_NAME's ENTRY_FIELD is" },
-					{ "queryPattern": "Lookup ENTRY_NAME's ENTRY_FIELD" },
-					{ "queryPattern": "Find me ENTRY_NAME's ENTRY_FIELD" },
-					{ "queryPattern": "ENTRY_NAME's ENTRY_FIELD" }
-				]
+				"name": "com.neuelogic.addr.LOOKUP_BY_NAME",
+				"parameters": [
+					{ "name": "name", "type": "Entry" },
+					{ "name": "fieldName", "type": "Entry" }
+				],
+				"trigger": {
+					"queryPatterns": [
+						"Can you tell me what $Entry:name's $Entry:fieldName is?",
+						"What is $Entry:name's $Entry:fieldName?",
+						"What's $Entry:name's $Entry:fieldName?",
+						"Can you find $Entry:name's $Entry:fieldName",
+						"Tell me what $Entry:name's $Entry:fieldName is",
+						"Tell me $Entry:name's $Entry:fieldName",
+						"Lookup what $Entry:name's $Entry:fieldName is",
+						"Lookup $Entry:name's $Entry:fieldName",
+						"Find me $Entry:name's $Entry:fieldName",
+						"$Entry:name's $Entry:fieldName"
+					]
+				}
 			}
 		}
 	],
 	"conversations": {
-		"LOOKUP_BY_NAME": {
-			"name": "LOOKUP_BY_NAME",
-			"url": "http://addr.neuelogic.com/lookupByName"
-		}
-		"noActionSpecified": {
-			"name": "noActionSpecified",
-			"url": "http://addr.neuelogic.com/noActionSpecified"
+		"dingledongledangis": {
+			"name": "addressBook",
+			"url": "http://addr.neuelogic.com/"
 		}
 	}
 }
