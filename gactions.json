@@ -3,7 +3,7 @@
 		{
 			"name": "MAIN",
 			"fulfillment": {
-				"conversationName": "noActionSpecified"
+				"conversationName": "addressBook"
 			},
 			"intent": {
 				"name": "actions.intent.MAIN"
@@ -38,7 +38,7 @@
 		}
 	],
 	"conversations": {
-		"dingledongledangis": {
+		"addressBook": {
 			"name": "addressBook",
 			"url": "http://swivel.ddns.net:3030/"
 		}
