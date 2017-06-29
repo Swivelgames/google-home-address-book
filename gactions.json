@@ -40,7 +40,7 @@
 	"conversations": {
 		"dingledongledangis": {
 			"name": "addressBook",
-			"url": "http://addr.neuelogic.com/"
+			"url": "http://swivel.ddns.net:3030/"
 		}
 	}
 }
