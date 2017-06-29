@@ -1,0 +1,9 @@
+{
+  "name": "address-book",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "actions-on-google": "^1.1.1"
+  }
+}

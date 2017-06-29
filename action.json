@@ -1,0 +1,44 @@
+{
+	"actions": [
+		{
+			"name": "MAIN",
+			"fulfillment": {
+				"conversationName": "noActionSpecified"
+			},
+			"intent": {
+				"name": "actions.intent.MAIN"
+			}
+		},
+		{
+			"name": "LOOKUP_BY_NAME",
+			"fulfillment": {
+				"conversationName": "LOOKUP_BY_NAME"
+			},
+			"intent": {
+				"name": "actions.intent.TEXT",
+				"queryPatterns": [
+					{ "queryPattern": "Can you tell me what ENTRY_NAME's ENTRY_FIELD is?" },
+					{ "queryPattern": "What is ENTRY_NAME's ENTRY_FIELD?" },
+					{ "queryPattern": "What's ENTRY_NAME's ENTRY_FIELD?" },
+					{ "queryPattern": "Can you find ENTRY_NAME's ENTRY_FIELD" },
+					{ "queryPattern": "Tell me what ENTRY_NAME's ENTRY_FIELD is" },
+					{ "queryPattern": "Tell me ENTRY_NAME's ENTRY_FIELD" },
+					{ "queryPattern": "Lookup what ENTRY_NAME's ENTRY_FIELD is" },
+					{ "queryPattern": "Lookup ENTRY_NAME's ENTRY_FIELD" },
+					{ "queryPattern": "Find me ENTRY_NAME's ENTRY_FIELD" },
+					{ "queryPattern": "ENTRY_NAME's ENTRY_FIELD" }
+				]
+			}
+		}
+	],
+	"conversations": {
+		"LOOKUP_BY_NAME": {
+			"name": "LOOKUP_BY_NAME",
+			"url": "http://addr.neuelogic.com/lookupByName"
+		}
+		"noActionSpecified": {
+			"name": "noActionSpecified",
+			"url": "http://addr.neuelogic.com/noActionSpecified"
+		}
+	}
+}

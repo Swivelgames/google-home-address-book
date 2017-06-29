@@ -1,0 +1,37 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add actions-on-google
+
+PATH: 
+  ~/Library/Python/2.7/bin:/usr/local/nginx/sbin:/usr/local/git/bin:/usr/local:~/Library/Android/sdk/platform-tools:/usr/local/bin/mongo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
+
+Yarn version: 
+  0.16.0
+
+Node version: 
+  7.7.4
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "address-book",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+bower manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: connect ECONNREFUSED 127.0.0.1:4873
+      at Object.exports._errnoException (util.js:1034:11)
+      at exports._exceptionWithHostPort (util.js:1057:20)
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1099:14)
