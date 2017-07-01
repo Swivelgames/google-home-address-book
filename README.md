@@ -6,9 +6,16 @@ This is a simple Actions on Google project made for Google Assistant on Android 
 
 I use `yarn` for managing project dependencies, but you're welcome to replace any of my `yarn` commands with the equivalent `npm` commands. They should work just fine!
 
-#### 1) Setting Up
+### 1) Setting Up
 
-##### 1.1) Yarn, Build, and Start
+#### 1.0) Prerequisites
+ * **ngrok** -- [Download and install `ngrok`](https://ngrok.com/). I put mine in the `/usr/local/bin/` directory and then ran `chmod +x ngrok` on it so that I could start it up whenever I wanted, but you can also run it from whatever directory you download it to.
+ * **gactions-cli** -- [Download and install `gactions-cli`](https://developers.google.com/actions/tools/gactions-cli). Just like ngrok, I put mind in the `/usr/local/bin/` directory and then ran `chmod +x ngrok` on it.
+ * **Actions on Google Project** -- [Go create one and then jump back over here](https://console.actions.google.com/)
+ * **node** -- I'm running the latest and greatest, even though Google complains about anything over version Node 6
+ * **yarn** (optional) -- A pretty cool alternative to `npm`. I didn't like it at first, but it has certainly grown on me! (As a side note: npm has come out with a newer version to compete with the extra features that yarn has.)
+
+#### 1.1) Yarn, Build, and Start
 ```bash
 $ yarn
 $ yarn run build
@@ -16,10 +23,8 @@ $ yarn start
 ```
 ***We're not ready just yet!*** We've got some other things to do down below...
 
-##### 1.2) Set up and run `ngrok`
-[Download](https://ngrok.com/) and install ngrok.
-
-In a **seperate** terminal window, type this (by default, I run on 3030):
+#### 1.2) Run `ngrok`
+In a **seperate** terminal window than the one running our node app on `3030`, type this (by default, I run on 3030):
 ```bash
 $ ngrok http 3030
 ```
@@ -35,13 +40,15 @@ Leave that running. Take the **HTTPS** url from that command and update that gac
 ...
 ```
 
-##### 1.3) Update Your Actions on Google Project
-With your updated `gactions.json` file, in the command below, change `MY_GACTIONS_PROJECT_ID` to the ID of the project in your Actions on Google console and then execute:
+#### 1.3) Update Your Actions on Google Project
+In a **third** terminal window, with your updated `gactions.json` file, in the command below, change `MY_GACTIONS_PROJECT_ID` to the ID of the project in your Actions on Google console and then execute:
 ```bash
 $ gactions test --action_package gactions.json --project MY_GACTIONS_PROJECT_ID
 ```
 
+### 2) Testing
 
+Head over to the [Actions on Google Console](https://console.actions.google.com/) and go to the Simulator. Say "talk to my test app", and then shoot it commands based on the ones below, or the ones you've created yourself!
 
 ## Entry Fields
 
@@ -76,6 +83,13 @@ The development for these actions hasn't been completed yet, but they're in prog
  * ENTRY_ACTIONS_EDIT
  * LIST_ALL_NAMES
  * LIST_TOTAL_ENTRIES
+
+
+# Side Comments
+
+I understand that this isn't the most beautiful project out there. This was created from scratch in a matter of a few days, with no prior understanding or knowledge of Google's ActionsSDK or API.AI -- It's been an interesting (and frustrating) journey to try and explore and get started with all this in such a short amount of time.
+
+In hindsight, I'm seeing now that it might have been *slightly* (no sarcasm) easier to go with Google's `functions` to have it up and running on Google Cloud. For a simple project, I was perfectly OK with just running this on express. However, given what I know now, *I would absolutely recommend using `functions` since it ties in to Google Cloud, making your app incredibly scalable*. Just a thought.
 
 # Special Thanks To
 
