@@ -63,7 +63,7 @@ Head over to the [Actions on Google Console](https://console.actions.google.com/
 
 # Actions
 
-The follow actions have been developed and tested to be working (at least somewhat)
+The follow actions have been developed and tested to be working (at least somewhat). Many of these work with edge-case scenarios not just happy-path, like trying to ask for an address of someone who isn't in your address, or trying to look up information that doesn't exist for someone who is in your address book.
 
 ### LOOKUP_BY_NAME
 ```
@@ -87,14 +87,35 @@ The follow actions have been developed and tested to be working (at least somewh
 <AddressBook> Carl's address is 1239 Johnson Drive New York New York 75068
 ```
 
-## Actions To Come
+### ENTRY_ACTIONS_EDIT
+```
+<USER> Change John's address to 7100 Corporate Dr, Plano, TX 75024
+<AddressBook> Alright, I just changed john doe's address.
+```
 
-The development for these actions hasn't been completed yet, but they're in progress.
+### ENTRY_ACTIONS_REMOVE
+```
+<USER> Delete John
+<AddressBook> Alright, I just deleted John Doe. Anything else?
+```
 
- * ENTRY_ACTIONS_REMOVE
- * ENTRY_ACTIONS_EDIT
- * LIST_ALL_NAMES
- * LIST_TOTAL_ENTRIES
+### LIST_TOTAL_ENTRIES
+```
+<USER> How many people are in my address book?
+<AddressBook> There is 1 person in your address book. Anything else?
+```
+
+### LIST_ALL_NAMES
+```
+<USER> Who's in my address book?
+<AddressBook> You have contact info for John Doe.
+```
+
+### BYE
+```
+<USER> Good bye
+<AddressBook> Bye!
+```
 
 
 # Side Comments
