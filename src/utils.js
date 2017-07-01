@@ -16,7 +16,7 @@ export const determineFieldKey = (phrase) => {
 }
 
 export const doesRawMatchQuery = (phrase, pattern) => {
-	const cleanPattern = pattern.replace(/[^\w\s$]+/ig,' ').toLowerCase();
+	const cleanPattern = pattern.replace(/[^\w\s$*]+/ig,' ').toLowerCase();
 	const cleanPhrase = phrase.replace(/[^\w\s]+/ig,' ').toLowerCase();
 
 	const phraseArr = cleanPhrase.split(/\s+/);
@@ -25,8 +25,12 @@ export const doesRawMatchQuery = (phrase, pattern) => {
 	const args = {};
 	for(var i in patternArr) {
 		const v = patternArr[i];
-		if (v[0] === '$') args[v.substr(1)] = phraseArr[i];
-		else if (v !== phraseArr[i]) return false;
+		if (v.substr(0,2) === '$*') {
+			args[v.substr(2)] = phraseArr.slice(i).join(' ');
+			return args;
+		} else if (v[0] === '$') {
+			args[v.substr(1)] = phraseArr[i];
+		} else if (v !== phraseArr[i]) return false;
 	}
 	return args;
 }

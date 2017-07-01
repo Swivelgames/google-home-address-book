@@ -76,11 +76,21 @@ The follow actions have been developed and tested to be working (at least somewh
 <AddressBook> John Doe's phone is 9723387700
 ```
 
+### ENTRY_ACTIONS_ADD
+```
+<USER> talk to my test app
+<Assistant> Sure. Let's get the test version of my test app.
+<AddressBook> What can I do for you today? I can add, edit, delete, and lookup people from your address book. You currently have one person in your address book.
+<USER> Add Carl with address 1239 Johnson Drive New York New York 75068
+<AddressBook> Done! I just added carl to your address book.
+<USER> What is Carl's address
+<AddressBook> Carl's address is 1239 Johnson Drive New York New York 75068
+```
+
 ## Actions To Come
 
 The development for these actions hasn't been completed yet, but they're in progress.
 
- * ENTRY_ACTIONS_ADD
  * ENTRY_ACTIONS_REMOVE
  * ENTRY_ACTIONS_EDIT
  * LIST_ALL_NAMES

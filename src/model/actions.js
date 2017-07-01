@@ -5,4 +5,17 @@ export const lookUpByName = (name) => store.filter((v) =>
 	v.name.toLowerCase().indexOf(name.toLowerCase()) > -1
 );
 
+export const addNew = (pkg) => {
+	try {
+		store.push(Object.assign({
+			name: 'not set',
+			phone: 'not set',
+			address: 'not set',
+			email: 'not set'
+		}, pkg));
+		return true;
+	} catch(e) { }
+	return false;
+}
+
 export const count = () => store.length;
