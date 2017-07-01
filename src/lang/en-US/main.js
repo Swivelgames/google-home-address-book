@@ -6,5 +6,6 @@ export const RESPONSE = (num) => `
 	your address book.
 
 	You currently have ${num}
-	people in your address book.
+	${num === 1 ? 'person' : 'people'}
+	in your address book.
 `;
