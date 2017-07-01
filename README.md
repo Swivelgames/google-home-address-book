@@ -70,8 +70,10 @@ The follow actions have been developed and tested to be working (at least somewh
 <USER> talk to my test app
 <Assistant> Sure. Let's get the test version of my test app.
 <AddressBook> What can I do for you today? I can add, edit, delete, and lookup people from your address book. You currently have one person in your address book.
-<USER> What is John's address?
+<USER> What is John's address
 <AddressBook> John Doe's address is 7100 Corporate Dr, Plano, TX 75024
+<USER> What is John's phone number
+<AddressBook> John Doe's phone is 9723387700
 ```
 
 ## Actions To Come
