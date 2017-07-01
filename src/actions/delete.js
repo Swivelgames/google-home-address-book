@@ -2,14 +2,13 @@ import model from '../model/index.js';
 import { determineFieldKey } from '../utils.js';
 
 export const triggers = [
-	"change $firstname $lastname's $fieldname to $*fieldvalue",
-	"change $firstname's $fieldname to $*fieldvalue"
+	"delete $firstname $lastname",
+	"delete $firstname"
 ];
 
 export const handler = (args, app) => {
 	const {
-		firstname, lastname,
-		fieldname, fieldvalue
+		firstname, lastname
 	} = args;
 
 	const name = `${firstname} ${lastname||''}`.trim();
@@ -22,24 +21,22 @@ export const handler = (args, app) => {
 		app.ask(`
 			Can you be more specific? You have ${entries.length}
 			people in your address book with that name.
+			I wouldn't want to delete all of them.
 		`);
 		return;
 	}
 
 	const entry = entries[0];
-	const key = determineFieldKey(fieldname);
-	const success = model.set(entry.name, {
-		[key]: fieldvalue
-	});
+	const success = model.remove(entry.name);
 
 	if (!success) {
 		app.ask(`
-			For some reason, I was not able to
-			change ${entry.name}'s ${fieldname}.
+			For some reason, I was not able
+			to delete ${entry.name}.
 			Is there something else you
 			would like me to do instead?
 		`);
 	} else {
-		app.ask(`Alright, I just changed ${entry.name}'s ${fieldname}.`);
+		app.ask(`Alright, I just deleted ${entry.name}. Anything else?`);
 	}
 };

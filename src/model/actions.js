@@ -16,7 +16,7 @@ export const addNew = (pkg) => {
 		return true;
 	} catch(e) { }
 	return false;
-}
+};
 
 export const set = (name, pkg) => {
 	try {
@@ -24,6 +24,16 @@ export const set = (name, pkg) => {
 		return true;
 	} catch(e) { }
 	return false;
-}
+};
+
+export const remove = (name) => {
+	const i = store.findIndex(v => v.name === name);
+	if (i < 0) return false;
+	try {
+		store.splice(i,1);
+		return true;
+	} catch(e) { }
+	return false;
+};
 
 export const count = () => store.length;

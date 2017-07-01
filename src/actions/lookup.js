@@ -11,19 +11,20 @@ export const triggers = [
 	"find me $firstName $lastName ' s $fieldName",
 	"$firstName $lastName ' s $fieldName",
 
-	"what is $name ' s $fieldName",
-	"ask address book for $name ' s $fieldName",
-	"tell me what $name ' s $fieldName is",
-	"tell me $name ' s $fieldName",
-	"lookup what $name ' s $fieldName is",
-	"lookup $name ' s $fieldName",
-	"find me $name ' s $fieldName",
-	"$name ' s $fieldName"
+	"what is $firstName ' s $fieldName",
+	"ask address book for $firstName ' s $fieldName",
+	"tell me what $firstName ' s $fieldName is",
+	"tell me $firstName ' s $fieldName",
+	"lookup what $firstName ' s $fieldName is",
+	"lookup $firstName ' s $fieldName",
+	"find me $firstName ' s $fieldName",
+	"$firstName ' s $fieldName"
 ];
 
 export const handler = (args, app) => {
-	const { name, fieldname } = args;
+	const { firstname, lastname, fieldname } = args;
 
+	const name = `${firstname} ${lastname||''}`.trim();
 	const entries = model.lookUpByName(name);
 
 	if (entries.length === 0) {
