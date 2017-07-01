@@ -10,37 +10,19 @@
 			}
 		},
 		{
-			"name": "LOOKUP_BY_NAME",
+			"name": "FUNCTIONS",
 			"fulfillment": {
 				"conversationName": "addressBook"
 			},
 			"intent": {
-				"name": "com.neuelogic.addr.LOOKUP_BY_NAME",
-				"parameters": [
-					{ "name": "name", "type": "Entry" },
-					{ "name": "fieldName", "type": "Entry" }
-				],
-				"trigger": {
-					"queryPatterns": [
-						"Can you tell me what $Entry:name's $Entry:fieldName is?",
-						"What is $Entry:name's $Entry:fieldName?",
-						"What's $Entry:name's $Entry:fieldName?",
-						"Can you find $Entry:name's $Entry:fieldName",
-						"Tell me what $Entry:name's $Entry:fieldName is",
-						"Tell me $Entry:name's $Entry:fieldName",
-						"Lookup what $Entry:name's $Entry:fieldName is",
-						"Lookup $Entry:name's $Entry:fieldName",
-						"Find me $Entry:name's $Entry:fieldName",
-						"$Entry:name's $Entry:fieldName"
-					]
-				}
+				"name": "actions.intent.TEXT"
 			}
 		}
 	],
 	"conversations": {
 		"addressBook": {
 			"name": "addressBook",
-			"url": "http://swivel.ddns.net:3030/"
+			"url": "https://fabcc2ab.ngrok.io/"
 		}
 	}
 }
