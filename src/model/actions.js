@@ -18,4 +18,12 @@ export const addNew = (pkg) => {
 	return false;
 }
 
+export const set = (name, pkg) => {
+	try {
+		Object.assign(store.find(v => v.name === name), pkg);
+		return true;
+	} catch(e) { }
+	return false;
+}
+
 export const count = () => store.length;
